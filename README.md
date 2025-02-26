@@ -2,11 +2,11 @@
 
 Este repositorio contiene scripts, configuraciones y documentación de los servidores del proyecto. Para mantener una estructura organizada, seguimos una estrategia simplificada de Git Flow.
 
- Estructura de Ramas en Git
+ ** Estructura de Ramas en Git **
 
 Para este tipo de repositorio, se recomienda una estrategia más estable sin tantas ramas temporales, ya que los cambios en servidores deben ser bien controlados.
 
- Ramas Principales (Persistentes)
+ ** Ramas Principales (Persistentes): **
 
 Estas ramas siempre existen y representan los estados clave del código.
 
@@ -31,7 +31,7 @@ Estas ramas siempre existen y representan los estados clave del código.
     git checkout staging
     ```
 
- Ramas Temporales (Se eliminan al finalizar)
+ ** Ramas Temporales (Se eliminan al finalizar): **
 
 Las siguientes ramas se crean solo cuando hay un cambio importante y se eliminan después.
 
