@@ -2,7 +2,7 @@
 
 Este repositorio contiene scripts, configuraciones y documentación de los servidores del proyecto. Para mantener una estructura organizada, seguimos una estrategia simplificada de Git Flow.
 
- ** Estructura de Ramas en Git **
+ **Estructura de Ramas en Git**
 
 Para este tipo de repositorio, se recomienda una estrategia más estable sin tantas ramas temporales, ya que los cambios en servidores deben ser bien controlados.
 
