@@ -69,7 +69,8 @@ CREATE TABLE Users (
 
 CREATE TABLE ItemType (
   idItem SERIAL PRIMARY KEY,
-  ItemName VARCHAR(45)
+  ItemName VARCHAR(45),
+  imagePath VARCHAR(255)
 );
 
 CREATE TABLE Provider (
@@ -90,6 +91,7 @@ CREATE TABLE Batch (
   Provider_idProvider INT NOT NULL,
   warrantyInDays VARCHAR(45),
   haveWarranty BOOLEAN,
+  initialQuantity INT NOT NULL,
   FOREIGN KEY (Item_idItem) REFERENCES ItemType(idItem) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (Provider_idProvider) REFERENCES Provider(idProvider) ON DELETE CASCADE ON UPDATE CASCADE
 );
