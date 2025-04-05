@@ -31,7 +31,6 @@ DROP SCHEMA IF EXISTS AutoPartes CASCADE;
 CREATE SCHEMA AutoPartes AUTHORIZATION admin;
 SET search_path TO AutoPartes;
 
-
 -- Crear tablas
 CREATE TABLE Person (
   idDocument CHAR(15) PRIMARY KEY,
@@ -48,23 +47,13 @@ CREATE TABLE UserType (
   userTypeName VARCHAR(45) NOT NULL UNIQUE
 );
 
-CREATE TABLE UserTokens (
-  idTokens SERIAL PRIMARY KEY,
-  token VARCHAR(500) NOT NULL UNIQUE,
-  expiresAt TIMESTAMP,
-  createdAt TIMESTAMP,
-  UserTokensCol BOOLEAN
-);
-
 CREATE TABLE Users (
   email VARCHAR(100) PRIMARY KEY,
   password VARCHAR(255) NOT NULL,
   UserType_idTypeUser INT NOT NULL,
   Person_idDocument CHAR(15) NOT NULL,
-  UserTokens_idTokens INT NOT NULL,
   FOREIGN KEY (UserType_idTypeUser) REFERENCES UserType(idTypeUser) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (Person_idDocument) REFERENCES Person(idDocument) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (UserTokens_idTokens) REFERENCES UserTokens(idTokens) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (Person_idDocument) REFERENCES Person(idDocument) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ItemType (
