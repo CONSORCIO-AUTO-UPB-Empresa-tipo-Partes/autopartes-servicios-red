@@ -1,6 +1,6 @@
-# Flujo de Ramas en Git para Configuración de Servidores
+# Flujo de Ramas en Git para Configuración de Servidores y Redes
 
-Este repositorio contiene scripts, configuraciones y documentación de los servidores del proyecto. Para mantener una estructura organizada, seguimos una estrategia simplificada de Git Flow.
+Este repositorio contiene scripts, configuraciones y documentación de los servidores del proyecto y la configuración de red. Para mantener una estructura organizada, seguimos una estrategia simplificada de Git Flow.
 
  **Estructura de Ramas en Git**
 
