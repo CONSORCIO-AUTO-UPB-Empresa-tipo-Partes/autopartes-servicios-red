@@ -1,0 +1,83 @@
+﻿enable
+configure terminal
+hostname SW_PARTES
+
+
+vlan 10
+ name Ventas
+vlan 20
+ name Secretaria
+vlan 30
+ name Administracion
+vlan 40
+ name Aplicacion
+vlan 50
+ name Servidores
+vlan 60
+ name Wifi_Bodega
+
+
+interface GigabitEthernet1/0/24
+ description Enlace a router PARTES
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30,40,50,60
+ no shutdown
+
+
+interface range GigabitEthernet1/0/1 - 4
+ description VLAN 10 - Ventas
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+
+
+interface range GigabitEthernet1/0/5 - 8
+ description VLAN 20 - Secretaria
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+
+
+interface range GigabitEthernet1/0/9 - 10
+ description VLAN 30 - Administracion
+ switchport mode access
+ switchport access vlan 30
+ no shutdown
+
+
+interface range GigabitEthernet1/0/11 - 14
+ description VLAN 40 - Aplicacion
+ switchport mode access
+ switchport access vlan 40
+ no shutdown
+
+
+interface range GigabitEthernet1/0/15 - 16
+ description VLAN 50 - Servidores
+ switchport mode access
+ switchport access vlan 50
+ no shutdown
+
+
+interface GigabitEthernet1/0/17
+ description VLAN 60 - Wifi_Bodega
+ switchport mode access
+ switchport access vlan 60
+ no shutdown
+
+
+interface range GigabitEthernet1/0/18 - 23
+ description Puerto no utilizado - Apagado por seguridad
+ shutdown
+
+
+interface vlan 1
+ ip address 172.16.5.2 255.255.255.248
+ no shutdown
+
+
+ip default-gateway 172.16.5.1
+
+
+end
+copy running-config startup-config
